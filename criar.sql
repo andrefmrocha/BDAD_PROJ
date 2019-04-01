@@ -10,7 +10,7 @@ CREATE TABLE Person (
     contact		INT	 NOT NULL UNIQUE,
     name		TEXT NOT NULL
 
-) WITHOUT ROWID;
+);
 
 
 -- Student table
@@ -20,21 +20,10 @@ CREATE TABLE Student(
     id				INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     studentCycle	TEXT NOT NULL,
     studentNumber	TEXT NOT NULL UNIQUE,
+    alumni          BOOLEAN,
 
     PRIMARY KEY(id)
-) WITHOUT ROWID;
-
-
--- Alumni table
-DROP TABLE IF EXISTS Alumni;
-
-CREATE TABLE Alumni(
-    id				INT	 REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    occupation		TEXT NOT NULL,
-    studentCycle	TEXT NOT NULL,
-    
-    PRIMARY KEY(id)
-) WITHOUT ROWID;
+);
 
 
 -- NonStudent table
@@ -45,7 +34,7 @@ CREATE TABLE NonStudent(
     occupation	TEXT NOT NULL,
     
     PRIMARY KEY(id)
-) WITHOUT ROWID;
+);
 
 
 -- University table
@@ -56,7 +45,7 @@ CREATE TABLE University (
     foundationDate	DATE NOT NULL,
     name			TEXT NOT NULL UNIQUE
 
-) WITHOUT ROWID;
+);
 
 
 -- Frequent table
@@ -66,7 +55,7 @@ CREATE TABLE Frequent(
     person		INT	REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     university	INT	REFERENCES University(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	-- TODO: VER ISTO
-	CHECK(person == Student(ID) or person == Alumni(ID)),
+	-- CHECK(person = Student(ID) or person = Alumni(ID)),
 
     PRIMARY KEY(
         person,
@@ -82,7 +71,7 @@ CREATE TABLE Society (
     id			INT  PRIMARY KEY,
     name		TEXT NOT NULL UNIQUE,
     university	INT  REFERENCES University(id) ON DELETE SET NULL ON UPDATE CASCADE
-) WITHOUT ROWID;
+);
 
 
 -- -- Member table
@@ -93,11 +82,11 @@ CREATE TABLE Member(
     member			INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     society			INT  REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
     stature			TEXT NOT NULL
-						 CHECK(stature == 'Associate' OR stature == 'Director' OR stature == 'SubDirector' OR 
-						 	stature == 'Treasure' OR stature == 'BoardMember' OR stature == 'Director' OR stature == 'CenterDirector'),
+						 CHECK(stature = 'Associate' OR stature = 'Director' OR stature = 'SubDirector' OR 
+						 	stature = 'Treasure' OR stature = 'BoardMember' OR stature = 'Director' OR stature = 'CenterDirector'),
     associateNumber	INT  NOT NULL,
 
-	CHECK((member == Alumni(id) AND stature == 'Associate') OR member == Student(id)),
+	-- CHECK((member = Alumni(id) AND stature = 'Associate') OR member = Student(id)),
 	PRIMARY KEY(
 		associateNumber,
 		society
@@ -113,7 +102,7 @@ CREATE TABLE Team(
 	person1	INT	 REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     person2	INT	 REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     points	INT
-) WITHOUT ROWID;
+);
 
 
 -- Debate table
@@ -125,7 +114,7 @@ CREATE TABLE Debate(
     date		DATE NOT NULL,
 	time 		TIME NOT NULL,
 	UNIQUE (location, date, time)
-) WITHOUT ROWID;
+);
 
 
 -- Tournament table
@@ -136,7 +125,7 @@ CREATE TABLE Tournament(
     society		INT  REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
     name		TEXT NOT NULL UNIQUE,
     official	BOOLEAN
-) WITHOUT ROWID;
+);
 
 
 -- Round table
@@ -146,20 +135,23 @@ CREATE TABLE Round(
     id			INT  PRIMARY KEY,
     motion		TEXT NOT NULL UNIQUE,
     name		TEXT NOT NULL
-					 CHECK(name == 'R1' OR name == 'R2' OR name == 'R3' OR name == 'R4' OR name == 'R5' OR name == 'SF' OR name == 'Final'),
+					 CHECK(name = 'R1' OR name = 'R2' OR name = 'R3' OR name = 'R4' OR name = 'R5' OR name = 'SF' OR name = 'Final'),
     infoSlide	TEXT,
     tournament	INT  REFERENCES Tournament(id) ON DELETE SET NULL ON UPDATE CASCADE
-) WITHOUT ROWID;
+);
 
 
 -- Adjudicator table
 DROP TABLE IF EXISTS Adjudicator;
 
 CREATE TABLE Adjudicator(
-    id 		INT PRIMARY KEY,
     debate	INT REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    person	INT REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
-) WITHOUT ROWID;
+    person	INT REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    PRIMARY KEY(
+        debate,
+        person
+    )
+);
 
 
 -- TournamentDebate table
@@ -172,7 +164,7 @@ CREATE TABLE TournamentDebate(
 							 CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50),
 
     PRIMARY KEY(id)
-) WITHOUT ROWID;
+);
 
 
 -- WeeklyDebate table
@@ -180,11 +172,11 @@ DROP TABLE IF EXISTS WeeklyDebate;
 
 CREATE TABLE WeeklyDebate(
     id			INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    motion		TEXT NOT NULL UNIQUE,
+    motion		TEXT NOT NULL,
     infoSlide	TEXT,
 
     PRIMARY KEY(id)
-) WITHOUT ROWID;
+);
 
 
 -- Specification table
@@ -195,11 +187,9 @@ CREATE TABLE Specification(
 	classification	INT	 NOT NULL
 						 CHECK(classification <= 4 AND classification >= 1),
     position		TEXT NOT NULL
-						 CHECK(position == 'OG' OR position == 'OO' OR position == 'CG' OR position == 'CO'),
-    firstSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
-						 CHECK(firstSpeaker == Team(person1) OR firstSpeaker == Team(person2)),
-    secondSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
-						 CHECK(secondSpeaker == Team(person1) OR secondSpeaker == Team(person2)),
+						 CHECK(position = 'OG' OR position = 'OO' OR position = 'CG' OR position = 'CO'),
+    firstSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    secondSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     team			INT  REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
     debate			INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	UNIQUE(position, debate),
@@ -208,7 +198,7 @@ CREATE TABLE Specification(
 	UNIQUE(firstSpeaker, debate),
 	UNIQUE(secondSpeaker, debate),
 	CHECK(firstSpeaker <> secondSpeaker)
-) WITHOUT ROWID;
+);
 
 
 -- SpeakerPoints table
@@ -217,13 +207,13 @@ DROP TABLE IF EXISTS SpeakerPoints;
 CREATE TABLE SpeakerPoints(
     id		INT  PRIMARY KEY,
 	type 	TEXT NOT NULL
-				 CHECK(type == 'PM' OR type == 'DPM' OR type == 'LO' OR type == 'DLO' OR type == 'MG' OR type == 'GW' OR type == 'MO' OR type == 'OW'),
+				 CHECK(type = 'PM' OR type = 'DPM' OR type = 'LO' OR type = 'DLO' OR type = 'MG' OR type = 'GW' OR type = 'MO' OR type = 'OW'),
     points	INT  NOT NULL
 				 DEFAULT(50)
 				 CHECK (points <= 100 AND points >= 50),
     debate	INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	UNIQUE(type, debate)
-) WITHOUT ROWID;
+);
 
 
 -- Organizer table
@@ -233,7 +223,7 @@ CREATE TABLE Organizer(
     id		INT PRIMARY KEY,
     society	INT REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
     debate	INT REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE
-) WITHOUT ROWID;
+);
 
 
 -- TournamentTeam table
