@@ -186,15 +186,18 @@ CREATE TABLE Specification(
 						 CHECK(classification <= 4 AND classification >= 1),
     position		TEXT NOT NULL
 						 CHECK(position == 'OG' OR position == 'OO' OR position == 'CG' OR position == 'CO'),
-    firstSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    secondSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    firstSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
+						 CHECK(firstSpeaker == Team(person1) OR firstSpeaker == Team(person2)),
+    secondSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
+						 CHECK(secondSpeaker == Team(person1) OR secondSpeaker == Team(person2)),
     team			INT  REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
     debate			INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE
 	UNIQUE(position, debate),
 	UNIQUE(classification, debate),
 	UNIQUE(team, debate),
 	UNIQUE(firstSpeaker, debate),
-	UNIQUE(secondSpeaker, debate)
+	UNIQUE(secondSpeaker, debate),
+	CHECK(firstSpeaker <> secondSpeaker)
 ) WITHOUT ROWID;
 
 
