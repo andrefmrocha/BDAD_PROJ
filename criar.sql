@@ -158,7 +158,7 @@ DROP TABLE IF EXISTS Adjudicator;
 CREATE TABLE Adjudicator(
     id 		INT PRIMARY KEY,
     debate	INT REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    person	INT REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    person	INT REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
 ) WITHOUT ROWID;
 
 
@@ -201,7 +201,7 @@ CREATE TABLE Specification(
     secondSpeaker	INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE
 						 CHECK(secondSpeaker == Team(person1) OR secondSpeaker == Team(person2)),
     team			INT  REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    debate			INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE
+    debate			INT  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	UNIQUE(position, debate),
 	UNIQUE(classification, debate),
 	UNIQUE(team, debate),
@@ -242,5 +242,10 @@ DROP TABLE IF EXISTS TournamentTeam;
 CREATE TABLE TournamentTeam(
     tournament	INT  REFERENCES Tournament(id) ON DELETE SET NULL ON UPDATE CASCADE,
     team		INT  REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
+
+    PRIMARY KEY (
+        tournament,
+        team
+    )
 	
 ) WITHOUT ROWID;
