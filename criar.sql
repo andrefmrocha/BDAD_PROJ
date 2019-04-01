@@ -1,5 +1,6 @@
 -- Fazer assertion temporais, numero de equipas do torneio => numero de debate, constituicao das equipas
 
+-- Person table
 DROP TABLE IF EXISTS Person;
 
 CREATE TABLE Person (
@@ -11,6 +12,8 @@ CREATE TABLE Person (
 
 ) WITHOUT ROWID;
 
+
+-- Student table
 DROP TABLE IF EXISTS Student;
 
 CREATE TABLE Student(
@@ -21,6 +24,8 @@ CREATE TABLE Student(
     PRIMARY KEY(id)
 ) WITHOUT ROWID;
 
+
+-- Alumni table
 DROP TABLE IF EXISTS Alumni;
 
 CREATE TABLE Alumni(
@@ -31,6 +36,8 @@ CREATE TABLE Alumni(
     PRIMARY KEY(id)
 ) WITHOUT ROWID;
 
+
+-- NonStudent table
 DROP TABLE IF EXISTS NonStudent;
 
 CREATE TABLE NonStudent(
@@ -40,6 +47,8 @@ CREATE TABLE NonStudent(
     PRIMARY KEY(id)
 ) WITHOUT ROWID;
 
+
+-- University table
 DROP TABLE IF EXISTS University;
 
 CREATE TABLE University (
@@ -49,11 +58,15 @@ CREATE TABLE University (
 
 ) WITHOUT ROWID;
 
+
+-- Frequent table
 DROP TABLE IF EXISTS Frequent;
 
 CREATE TABLE Frequent(
     person		INT	REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     university	INT	REFERENCES University(id) ON DELETE SET NULL ON UPDATE CASCADE,
+	-- TODO: VER ISTO
+	CHECK(person == Student(ID) or person == Alumni(ID)),
 
     PRIMARY KEY(
         person,
@@ -62,6 +75,7 @@ CREATE TABLE Frequent(
 ) WITHOUT ROWID;
 
 
+-- Society table
 DROP TABLE IF EXISTS Society;
 
 CREATE TABLE Society (
@@ -71,37 +85,26 @@ CREATE TABLE Society (
 ) WITHOUT ROWID;
 
 
+-- -- Member table
+-- TODO: ver esta tentativa de unir associate e member
 DROP TABLE IF EXISTS Member;
 
 CREATE TABLE Member(
-    student			INT  REFERENCES Student(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    member			INT  REFERENCES Person(id) ON DELETE SET NULL ON UPDATE CASCADE,
     society			INT  REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
     stature			TEXT NOT NULL
 						 CHECK(stature == 'Associate' OR stature == 'Director' OR stature == 'SubDirector' OR 
 						 	stature == 'Treasure' OR stature == 'BoardMember' OR stature == 'Director' OR stature == 'CenterDirector'),
     associateNumber	INT  NOT NULL,
-	
+
+	CHECK((member == Alumni(id) AND stature == 'Associate') OR member == Student(id)),
 	PRIMARY KEY(
 		associateNumber,
 		society
 	)
 ) WITHOUT ROWID;
 
-
-DROP TABLE IF EXISTS Associate;
-
-CREATE TABLE Associate(
-    alumni			INT REFERENCES Alumni(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    society			INT REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    associateNumber	INT NOT NULL,
-
-	PRIMARY KEY(
-		associateNumber,
-		society
-	)
-) WITHOUT ROWID;
-
-
+-- Team table
 DROP TABLE IF EXISTS Team;
 
 CREATE TABLE Team(
@@ -113,6 +116,7 @@ CREATE TABLE Team(
 ) WITHOUT ROWID;
 
 
+-- Debate table
 DROP TABLE IF EXISTS Debate;
 
 CREATE TABLE Debate(
@@ -123,6 +127,8 @@ CREATE TABLE Debate(
 	UNIQUE (location, date, time)
 ) WITHOUT ROWID;
 
+
+-- Tournament table
 DROP TABLE IF EXISTS Tournament;
 
 CREATE TABLE Tournament(
@@ -133,7 +139,7 @@ CREATE TABLE Tournament(
 ) WITHOUT ROWID;
 
 
-
+-- Round table
 DROP TABLE IF EXISTS Round;
 
 CREATE TABLE Round(
@@ -146,6 +152,7 @@ CREATE TABLE Round(
 ) WITHOUT ROWID;
 
 
+-- Adjudicator table
 DROP TABLE IF EXISTS Adjudicator;
 
 CREATE TABLE Adjudicator(
@@ -155,6 +162,7 @@ CREATE TABLE Adjudicator(
 ) WITHOUT ROWID;
 
 
+-- TournamentDebate table
 DROP TABLE IF EXISTS TournamentDebate;
 
 CREATE TABLE TournamentDebate(
@@ -167,6 +175,7 @@ CREATE TABLE TournamentDebate(
 ) WITHOUT ROWID;
 
 
+-- WeeklyDebate table
 DROP TABLE IF EXISTS WeeklyDebate;
 
 CREATE TABLE WeeklyDebate(
@@ -178,6 +187,7 @@ CREATE TABLE WeeklyDebate(
 ) WITHOUT ROWID;
 
 
+-- Specification table
 DROP TABLE IF EXISTS Specification;
 
 CREATE TABLE Specification(
@@ -201,6 +211,7 @@ CREATE TABLE Specification(
 ) WITHOUT ROWID;
 
 
+-- SpeakerPoints table
 DROP TABLE IF EXISTS SpeakerPoints;
 
 CREATE TABLE SpeakerPoints(
@@ -215,7 +226,7 @@ CREATE TABLE SpeakerPoints(
 ) WITHOUT ROWID;
 
 
-
+-- Organizer table
 DROP TABLE IF EXISTS Organizer;
 
 CREATE TABLE Organizer(
@@ -225,6 +236,7 @@ CREATE TABLE Organizer(
 ) WITHOUT ROWID;
 
 
+-- TournamentTeam table
 DROP TABLE IF EXISTS TournamentTeam;
 
 CREATE TABLE TournamentTeam(
