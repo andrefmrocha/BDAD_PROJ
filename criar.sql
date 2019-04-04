@@ -176,7 +176,7 @@ CREATE TABLE WeeklyDebate(
     motion		TEXT NOT NULL,
     infoSlide	TEXT,
 
-    PRIMARY KEY(id)
+    PRIMARY KEY(debate)
 );
 
 
@@ -203,7 +203,7 @@ CREATE TABLE Specification(
 
 
 -- SpeakerPoints table
-DROP TABLE IF EXISTS SpeakerPoINTEGERs;
+DROP TABLE IF EXISTS SpeakerPoints;
 
 CREATE TABLE SpeakerPoints(
     id		INTEGER  PRIMARY KEY,
