@@ -172,9 +172,12 @@ CREATE TABLE TournamentDebate(
 DROP TABLE IF EXISTS WeeklyDebate;
 
 CREATE TABLE WeeklyDebate(
-    debate      INTEGER  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    motion		TEXT NOT NULL,
-    infoSlide	TEXT,
+    debate      INTEGER REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    motion		TEXT	NOT NULL,
+    infoSlide	TEXT,	
+	-- Ver como por não nulo
+    organizer	INTEGER REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
+
 
     PRIMARY KEY(debate)
 );
@@ -214,16 +217,6 @@ CREATE TABLE SpeakerPoints(
 				 CHECK (points <= 100 AND points >= 50),
     debate	INTEGER  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	UNIQUE(type, debate)
-);
-
-
--- Organizer table
-DROP TABLE IF EXISTS Organizer;
-
-CREATE TABLE Organizer(
-    id		INTEGER PRIMARY KEY,
-    society	INTEGER REFERENCES Society(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    debate	INTEGER REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 

@@ -1,3 +1,19 @@
+/*
+Composição da Database:
+	- 10 Universidades
+	- 8 Sociedades - uni 3 e 9 não têm sociedade
+	- 3 Torneios - 2 oficiais (Distrital e Tornadu) e 1 open todos de 16 equipas
+	- 21 Rondas - 7 * 3
+	- 69 DebatesTorneio - (4 (16 equipas) * 5 (rondas iniciais) + 2 * 1 (Semifinais) + 1 (final) ) * 3 (torneios)
+	- 31 DebatesRegulares
+	- 100 Debates
+	- Equipas - 30 "oficiais" , sendo 16 com pessoas diferentes e as outras 14 reorganizações -> (pelo menos 32 estudantes-> 40)
+	- 70 Pessoas - 40 estudantes +  15 alumni + 15 nonstudent
+
+
+*/
+
+-- Person
 INSERT INTO `Person` (`birthDate`,`address`,`contact`,`name`) VALUES ("12-22-00","Ap #588-626 Cursus Street","931470229","Aristotle Dominguez");
 INSERT INTO `Person` (`birthDate`,`address`,`contact`,`name`) VALUES ("10-30-91","665-9008 Mi St.","964322581","Naomi Wallace");
 INSERT INTO `Person` (`birthDate`,`address`,`contact`,`name`) VALUES ("08-07-98","Ap #879-2555 Id Rd.","939717203","Declan Jennings");
@@ -50,6 +66,7 @@ INSERT INTO `Person` (`birthDate`,`address`,`contact`,`name`) VALUES ("08-05-93"
 INSERT INTO `Person` (`birthDate`,`address`,`contact`,`name`) VALUES ("12-01-98","1704 Et, Ave","960891136","Carter Oneal");
 
 
+-- Student
 INSERT INTO `Student` (`id`,`studentCycle`,`studentNumber`,`alumni`) VALUES (1,"MIEMM",201884680,1);
 INSERT INTO `Student` (`id`,`studentCycle`,`studentNumber`,`alumni`) VALUES (2,"ANIME",200923737,0);
 INSERT INTO `Student` (`id`,`studentCycle`,`studentNumber`,`alumni`) VALUES (3,"MECC",201327774,1);
@@ -92,6 +109,7 @@ INSERT INTO `Student` (`id`,`studentCycle`,`studentNumber`,`alumni`) VALUES (39,
 INSERT INTO `Student` (`id`,`studentCycle`,`studentNumber`,`alumni`) VALUES (40,"MMUS",201236610,0);
 
 
+-- NonStudent
 INSERT INTO `NonStudent` (`id`,`occupation`) VALUES (40,"Advertising");
 INSERT INTO `NonStudent` (`id`,`occupation`) VALUES (41,"Legal Department");
 INSERT INTO `NonStudent` (`id`,`occupation`) VALUES (42,"Quality Assurance");
@@ -105,6 +123,7 @@ INSERT INTO `NonStudent` (`id`,`occupation`) VALUES (49,"Customer Service");
 INSERT INTO `NonStudent` (`id`,`occupation`) VALUES (50,"Finances");
 
 
+-- University
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Universidade Europeia de Lisboa","05-26-39");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Escola Superior Artística do Porto","11-23-15");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Escola Superior de Educação de João de Deus","08-27-20");
@@ -113,10 +132,11 @@ INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Universidade de Avei
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Universidade do Porto","04-20-92");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Universidade de Coimbra","08-12-97");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Universidade Católica do Porto","10-03-88");
-INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Instituto Superior Manuel Teixeira Gomes","11-30-46");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Instituto Piaget","07-28-22");
 INSERT INTO `University` (`name`,`foundationDate`) VALUES ("Instituto Superior da Maia","02-10-35");
 
+
+-- Frequent
 INSERT INTO `Frequent` (`person`,`university`) VALUES (1,5);
 INSERT INTO `Frequent` (`person`,`university`) VALUES (2,10);
 INSERT INTO `Frequent` (`person`,`university`) VALUES (3,1);
@@ -158,16 +178,19 @@ INSERT INTO `Frequent` (`person`,`university`) VALUES (38,1);
 INSERT INTO `Frequent` (`person`,`university`) VALUES (39,3);
 INSERT INTO `Frequent` (`person`,`university`) VALUES (40,6);
 
+
+-- Society
 INSERT INTO `Society` (`name`,`university`) VALUES ("SdDUL",1);
-INSERT INTO `Society` (`name`,`university`) VALUES ("SDESAP",3);
+INSERT INTO `Society` (`name`,`university`) VALUES ("SDESAP",2);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SDISCE",4);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SdDUA",5);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SdDUP",6);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SDUC",7);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SdDUCP",8);
-INSERT INTO `Society` (`name`,`university`) VALUES ("SdDIP",9);
 INSERT INTO `Society` (`name`,`university`) VALUES ("SDISM",10);
 
+
+-- Team
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("odio. Nam interdum",35,45,10);
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("est ac",36,14,8);
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("vitae, sodales at,",6,39,1);
@@ -269,6 +292,8 @@ INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("est tempor bib
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("Suspendisse aliquet, sem",14,27,7);
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("Phasellus fermentum convallis",14,41,12);
 
+
+-- Member
 INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (36,4,"BoardMember",1);
 INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (12,2,"CenterDirector",2);
 INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (12,5,"CenterDirector",3);
@@ -308,6 +333,8 @@ INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (17
 INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (33,6,"Treasure",37);
 INSERT INTO `Member` (`person`,`society`,`stature`,`associateNumber`) VALUES (29,6,"Treasure",38);
 
+
+-- Debate
 INSERT INTO `Debate` (`location`,`date`,`time`) VALUES ("795-5054 Ante Rd.","02-02-14","1539198721");
 INSERT INTO `Debate` (`location`,`date`,`time`) VALUES ("P.O. Box 940, 2551 Vivamus Rd.","01-11-14","1533110854");
 INSERT INTO `Debate` (`location`,`date`,`time`) VALUES ("Ap #193-8526 Neque Av.","04-27-14","1543319039");
@@ -410,7 +437,7 @@ INSERT INTO `Debate` (`location`,`date`,`time`) VALUES ("Ap #492-4259 Quam. Road
 INSERT INTO `Debate` (`location`,`date`,`time`) VALUES ("6212 Non, Road","06-25-18","1535356561");
 
 
-
+-- Adjudicator
 INSERT INTO `Adjudicator` (`person`,`debate`) VALUES (25,"1");
 INSERT INTO `Adjudicator` (`person`,`debate`) VALUES (11,"1");
 INSERT INTO `Adjudicator` (`person`,`debate`) VALUES (36,"2");
@@ -491,6 +518,7 @@ INSERT INTO `Adjudicator` (`person`,`debate`) VALUES (28,"56");
 INSERT INTO `Adjudicator` (`person`,`debate`) VALUES (38,"56");
 
 
+-- WeeklyDebate
 INSERT INTO `WeeklyDebate` (`motion`,`debate`,`infoSlide`) VALUES ("This House Morbi non sapien molestie",1,"");
 INSERT INTO `WeeklyDebate` (`motion`,`debate`,`infoSlide`) VALUES ("This House pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper,",2,"");
 INSERT INTO `WeeklyDebate` (`motion`,`debate`,`infoSlide`) VALUES ("This House Aenean egestas hendrerit neque. In ornare sagittis felis. Donec tempor,",3,"diam");
@@ -524,12 +552,13 @@ INSERT INTO `WeeklyDebate` (`motion`,`debate`,`infoSlide`) VALUES ("This House t
 INSERT INTO `WeeklyDebate` (`motion`,`debate`,`infoSlide`) VALUES ("This House iaculis nec, eleifend",31,"sit amet metus. Aliquam");
 
 
-
+-- Tournament
 INSERT INTO `Tournament` (`name`,`official`,`society`) VALUES ("Tornadu",1,5);
 INSERT INTO `Tournament` (`name`,`official`,`society`) VALUES ("Open Coimbra",0,6);
 INSERT INTO `Tournament` (`name`,`official`,`society`) VALUES ("Distrital do Porto",1,7);
 
 
+-- Round
 INSERT INTO `Round` (`motion`,`infoSlide`,`tournament`,`name`) VALUES ("This House mollis. Phasellus libero","Cum","1","R1");
 INSERT INTO `Round` (`motion`,`infoSlide`,`tournament`,`name`) VALUES ("This House blandit congue. In scelerisque scelerisque dui. Suspendisse","Sed","1","R2");
 INSERT INTO `Round` (`motion`,`infoSlide`,`tournament`,`name`) VALUES ("This House a purus. Duis elementum,","in faucibus","1","R3");
