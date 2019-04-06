@@ -164,6 +164,10 @@ CREATE TABLE TournamentDebate(
     round 				INTEGER	 REFERENCES Round(id) ON DELETE SET NULL ON UPDATE CASCADE,
     speakerPointsMean	REAL DEFAULT(50) 
 							 CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50),
+	OGSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
+	OOSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
+	CGSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
+	COSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
 
     PRIMARY KEY(id)
 );
@@ -210,15 +214,28 @@ CREATE TABLE Specification(
 DROP TABLE IF EXISTS SpeakerPoints;
 
 CREATE TABLE SpeakerPoints(
-    id		INTEGER  PRIMARY KEY,
-	type 	TEXT NOT NULL
-				 CHECK(type = 'PM' OR type = 'DPM' OR type = 'LO' OR type = 'DLO' OR type = 'MG' OR type = 'GW' OR type = 'MO' OR type = 'OW'),
-    points	INTEGER  NOT NULL
-				 DEFAULT(50)
-				 CHECK (points <= 100 AND points >= 50),
+    id					INTEGER  PRIMARY KEY,
+	firstSpeakerPoints	INTEGER  NOT NULL
+								 DEFAULT(50)
+								 CHECK (points <= 100 AND points >= 50),
+	secondSpeakerPoints	INTEGER  NOT NULL
+								 DEFAULT(50)
+								 CHECK (points <= 100 AND points >= 50),
     debate	INTEGER  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
-	UNIQUE(type, debate)
 );
+
+-- Performance table
+DROP TABLE IF EXISTS Performance;
+
+CREATE TABLE Performance(
+    team			INTEGER	REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
+    speakerpoints	INTEGER	REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
+
+    PRIMARY KEY(
+        team,
+        speakerpoints
+    )
+) WITHOUT ROWID;
 
 
 -- TournamentTeam table
