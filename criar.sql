@@ -229,14 +229,10 @@ CREATE TABLE SpeakerPoints(
 DROP TABLE IF EXISTS Performance;
 
 CREATE TABLE Performance(
+    id				INTEGER  PRIMARY KEY,
     team			INTEGER	REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
-    speakerpoints	INTEGER	REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
-
-    PRIMARY KEY(
-        team,
-        speakerpoints
-    )
-) WITHOUT ROWID;
+    speakerpoints	INTEGER	REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE
+);
 
 
 -- TournamentTeam table
