@@ -164,6 +164,7 @@ CREATE TABLE TournamentDebate(
     round 				INTEGER	 REFERENCES Round(id) ON DELETE SET NULL ON UPDATE CASCADE,
     speakerPointsMean	REAL DEFAULT(50) 
 							 CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50),
+	-- TODO: fazer check to speakerPointsMean  
 	OGSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	OOSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
 	CGSpeakerPoints		INTEGER	 REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -217,11 +218,11 @@ CREATE TABLE SpeakerPoints(
     id					INTEGER  PRIMARY KEY,
 	firstSpeakerPoints	INTEGER  NOT NULL
 								 DEFAULT(50)
-								 CHECK (points <= 100 AND points >= 50),
+								 CHECK (firstSpeakerPoints <= 100 AND firstSpeakerPoints >= 50),
 	secondSpeakerPoints	INTEGER  NOT NULL
 								 DEFAULT(50)
-								 CHECK (points <= 100 AND points >= 50),
-    debate	INTEGER  REFERENCES Debate(id) ON DELETE SET NULL ON UPDATE CASCADE,
+								 CHECK (secondSpeakerPoints <= 100 AND secondSpeakerPoints >= 50),
+	UNIQUE(firstSpeakerPoints, secondSpeakerPoints)
 );
 
 -- Performance table
