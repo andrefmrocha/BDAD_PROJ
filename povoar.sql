@@ -13,8 +13,8 @@ Composição da Database:
  x	- 40 Member
  x	- 350 Adjudicatos - 25 debates de 2, 25 de 3, 25 de 4 e 25 de 5
  x	- 50 SpeakerPoints
-	- 400 Specification
-	- 276 Performance (4 equipas * 69 debates de torneio)
+ x 	- 400 Specification
+ x	- 276 Performance (4 equipas * 69 debates de torneio)
 	- 48 TournamentTeam (3 torneios * 16 equipas cada torneio)
 
 */
@@ -937,60 +937,487 @@ INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (84,79
 
 -- TournamentDebate
 -- Tournament 1: R1 - R5
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (5,"1",50,1,2,3,4);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (6,"1",55,5,6,7,8);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (7,"1",90,9,10,11,12);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (8,"1",90,13,14,15,16);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (9,"2",84,17,18,19,20);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (10,"2",78,21,22,23,24);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (11,"2",50,25,26,27,28);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (12,"2",50,29,30,31,32);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (13,"3",50,33,34,35,36);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (14,"3",92,37,38,39,40);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (15,"3",50,41,42,43,44);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (16,"3",87,45,46,47,48);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (17,"4",78,49,50,51,52);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (18,"4",70,53,54,55,56);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (19,"4",68,57,58,59,60);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (20,"4",50,61,62,63,64);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (21,"5",50,65,66,67,68);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (22,"5",78,69,70,71,72);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (23,"5",90,73,74,75,76);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (24,"5",84,77,78,79,80);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (5,"1",50,1,2,3,4);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (6,"1",55,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (7,"1",90,9,10,11,12);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (8,"1",90,13,14,15,16);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (9,"2",84,17,18,19,20);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (10,"2",78,21,22,23,24);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (11,"2",50,25,26,27,28);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (12,"2",50,29,30,31,32);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (13,"3",50,33,34,35,36);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (14,"3",92,37,38,39,40);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (15,"3",50,41,42,43,44);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (16,"3",87,45,46,47,48);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (17,"4",78,49,50,51,52);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (18,"4",70,53,54,55,56);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (19,"4",68,57,58,59,60);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (20,"4",50,61,62,63,64);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (21,"5",50,65,66,67,68);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (22,"5",78,69,70,71,72);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (23,"5",90,73,74,75,76);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (24,"5",84,77,78,79,80);
 
 -- Tournament 1: SemiFinals
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (25,"6",50,1,2,3,4);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (26,"6",88,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (25,"6",50,1,2,3,4);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (26,"6",88,5,6,7,8);
 
 -- Tournament 1: Finals
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (27,"7",88,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (27,"7",88,5,6,7,8);
 
 
 -- Tournament 2: R1 - R5
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (28,"8",51,1,2,3,4);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (29,"8",94,5,6,7,8);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (30,"8",54,9,10,11,12);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (31,"8",53,13,14,15,16);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (32,"9",50,17,18,19,20);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (33,"9",60,21,22,23,24);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (34,"9",90,25,26,27,28);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (35,"9",50,29,30,31,32);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (36,"10",88,33,34,35,36);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (37,"10",68,37,38,39,40);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (38,"10",50,41,42,43,44);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (39,"10",50,45,46,47,48);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (40,"11",51,49,50,51,52);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (41,"11",93,53,54,55,56);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (42,"11",52,57,58,59,60);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (43,"11",88,61,62,63,64);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (44,"12",69,65,66,67,68);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (45,"12",55,69,70,71,72);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (46,"12",92,73,74,75,76);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (47,"12",54,77,78,79,80);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (28,"8",51,1,2,3,4);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (29,"8",94,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (30,"8",54,9,10,11,12);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (31,"8",53,13,14,15,16);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (32,"9",50,17,18,19,20);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (33,"9",60,21,22,23,24);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (34,"9",90,25,26,27,28);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (35,"9",50,29,30,31,32);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (36,"10",88,33,34,35,36);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (37,"10",68,37,38,39,40);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (38,"10",50,41,42,43,44);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (39,"10",50,45,46,47,48);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (40,"11",51,49,50,51,52);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (41,"11",93,53,54,55,56);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (42,"11",52,57,58,59,60);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (43,"11",88,61,62,63,64);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (44,"12",69,65,66,67,68);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (45,"12",55,69,70,71,72);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (46,"12",92,73,74,75,76);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (47,"12",54,77,78,79,80);
 
 -- Tournament 2: SemiFinals
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (48,"13",60,1,2,3,4);
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (49,"13",60,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (48,"13",60,1,2,3,4);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (49,"13",60,5,6,7,8);
 
 -- Tournament 2: Finals
-INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,OOSpeakerPoints,COSpeakerPoints) VALUES (50,"14",50,5,6,7,8);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (50,"14",50,5,6,7,8);
+
+
+
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"5");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,4,2,"5");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,6,3,"5");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,8,4,"5");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,10,5,"6");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"6");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,14,7,"6");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,16,8,"6");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,18,9,"7");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,20,10,"7");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,22,11,"7");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,24,12,"7");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,26,13,"8");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,28,14,"8");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,30,15,"8");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,32,16,"8");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"9");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,4,2,"9");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,6,3,"9");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,8,4,"9");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,10,5,"10");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"10");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,14,7,"10");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,16,8,"10");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,18,9,"11");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,20,10,"11");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,22,11,"11");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,24,12,"11");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,26,13,"12");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,28,14,"12");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,30,15,"12");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,32,16,"12");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"13");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,4,2,"13");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,6,3,"13");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,8,4,"13");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,10,5,"14");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"14");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,14,7,"14");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,16,8,"14");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,18,9,"15");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,20,10,"15");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,22,11,"15");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,24,12,"15");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,26,13,"16");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,28,14,"16");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,30,15,"16");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,32,16,"16");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"17");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,4,2,"17");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,6,3,"17");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,8,4,"17");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,10,5,"18");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"18");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,14,7,"18");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,16,8,"18");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,18,9,"19");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,20,10,"19");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,22,11,"19");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,24,12,"19");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,26,13,"20");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,28,14,"20");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,30,15,"20");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,32,16,"20");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"21");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,4,2,"21");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,6,3,"21");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,8,4,"21");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,10,5,"22");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"22");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,14,7,"22");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,16,8,"22");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,18,9,"23");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,20,10,"23");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,22,11,"23");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,24,12,"23");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,26,13,"24");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,28,14,"24");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,30,15,"24");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,32,16,"24");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"25");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",9,10,5,"25");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",17,18,9,"25");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",25,26,13,"25");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",3,4,2,"26");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,12,6,"26");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",19,20,10,"26");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",27,28,14,"26");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,1,"27");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",9,10,5,"27");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",3,4,2,"27");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",11,12,6,"27");
+
+
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"28");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",40,41,34,"28");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",42,43,35,"28");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",44,45,36,"28");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",46,47,37,"29");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"29");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",50,51,39,"29");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",52,53,40,"29");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,55,41,"30");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",56,57,42,"30");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",58,59,43,"30");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",60,61,44,"30");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",62,63,45,"31");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",64,65,46,"31");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",66,67,47,"31");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",68,69,48,"31");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"32");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",40,41,34,"32");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",42,43,35,"32");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",44,45,36,"32");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",46,47,37,"33");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"33");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",50,51,39,"33");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",52,53,40,"33");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,55,41,"34");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",56,57,42,"34");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",58,59,43,"34");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",60,61,44,"34");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",62,63,45,"35");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",64,65,46,"35");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",66,67,47,"35");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",68,69,48,"35");
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"36");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",40,41,34,"36");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",42,43,35,"36");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",44,45,36,"36");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",46,47,37,"37");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"37");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",50,51,39,"37");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",52,53,40,"37");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,55,41,"38");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",56,57,42,"38");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",58,59,43,"38");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",60,61,44,"38");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",62,63,45,"39");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",64,65,46,"39");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",66,67,47,"39");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",68,69,48,"39");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"40");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",40,41,34,"40");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",42,43,35,"40");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",44,45,36,"40");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",46,47,37,"41");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"41");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",50,51,39,"41");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",52,53,40,"41");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,55,41,"42");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",56,57,42,"42");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",58,59,43,"42");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",60,61,44,"42");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",62,63,45,"43");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",64,65,46,"43");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",66,67,47,"43");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",68,69,48,"43");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"44");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",40,41,34,"44");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",42,43,35,"44");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",44,45,36,"44");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",46,47,37,"45");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"45");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",50,51,39,"45");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",52,53,40,"45");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,55,41,"46");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",56,57,42,"46");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",58,59,43,"46");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",60,61,44,"46");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",62,63,45,"47");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",64,65,46,"47");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",66,67,47,"47");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",68,69,48,"47");
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"48");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",46,47,37,"48");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",54,55,41,"48");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",62,63,45,"48");
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",40,41,34,"49");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",48,49,38,"49");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",56,57,42,"49");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",64,65,46,"49");
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",38,39,33,"50");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",46,47,37,"50");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",56,57,42,"50");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",64,65,46,"50");
+
+
+
+
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,21,"1");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,5,22,"1");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,8,23,"1");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,11,24,"1");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,14,25,"2");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,17,26,"2");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,20,27,"2");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",15,23,28,"2");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",17,26,29,"3");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",19,29,30,"3");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",21,32,31,"3");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",23,35,32,"3");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",25,38,33,"4");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",27,41,34,"4");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",29,44,35,"4");
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",31,47,36,"4");
+
+
+
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",1);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",2);
+INSERT INTO Performance (team,speakerPoints) VALUES ("3",3);
+INSERT INTO Performance (team,speakerPoints) VALUES ("4",4);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("7",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("8",8);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",9);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",10);
+INSERT INTO Performance (team,speakerPoints) VALUES ("11",11);
+INSERT INTO Performance (team,speakerPoints) VALUES ("12",12);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",13);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",14);
+INSERT INTO Performance (team,speakerPoints) VALUES ("15",15);
+INSERT INTO Performance (team,speakerPoints) VALUES ("16",16);
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",17);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",18);
+INSERT INTO Performance (team,speakerPoints) VALUES ("3",19);
+INSERT INTO Performance (team,speakerPoints) VALUES ("4",20);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",21);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",22);
+INSERT INTO Performance (team,speakerPoints) VALUES ("7",23);
+INSERT INTO Performance (team,speakerPoints) VALUES ("8",24);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",25);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",26);
+INSERT INTO Performance (team,speakerPoints) VALUES ("11",27);
+INSERT INTO Performance (team,speakerPoints) VALUES ("12",28);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",29);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",30);
+INSERT INTO Performance (team,speakerPoints) VALUES ("15",31);
+INSERT INTO Performance (team,speakerPoints) VALUES ("16",32);
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",33);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",34);
+INSERT INTO Performance (team,speakerPoints) VALUES ("3",35);
+INSERT INTO Performance (team,speakerPoints) VALUES ("4",36);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",37);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",38);
+INSERT INTO Performance (team,speakerPoints) VALUES ("7",39);
+INSERT INTO Performance (team,speakerPoints) VALUES ("8",40);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",41);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",42);
+INSERT INTO Performance (team,speakerPoints) VALUES ("11",43);
+INSERT INTO Performance (team,speakerPoints) VALUES ("12",44);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",45);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",46);
+INSERT INTO Performance (team,speakerPoints) VALUES ("15",47);
+INSERT INTO Performance (team,speakerPoints) VALUES ("16",48);
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",49);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",50);
+INSERT INTO Performance (team,speakerPoints) VALUES ("3",51);
+INSERT INTO Performance (team,speakerPoints) VALUES ("4",52);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",53);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",54);
+INSERT INTO Performance (team,speakerPoints) VALUES ("7",55);
+INSERT INTO Performance (team,speakerPoints) VALUES ("8",56);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",57);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",58);
+INSERT INTO Performance (team,speakerPoints) VALUES ("11",59);
+INSERT INTO Performance (team,speakerPoints) VALUES ("12",60);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",61);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",62);
+INSERT INTO Performance (team,speakerPoints) VALUES ("15",63);
+INSERT INTO Performance (team,speakerPoints) VALUES ("16",64);
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",65);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",66);
+INSERT INTO Performance (team,speakerPoints) VALUES ("3",67);
+INSERT INTO Performance (team,speakerPoints) VALUES ("4",68);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",69);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",70);
+INSERT INTO Performance (team,speakerPoints) VALUES ("7",71);
+INSERT INTO Performance (team,speakerPoints) VALUES ("8",72);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",73);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",74);
+INSERT INTO Performance (team,speakerPoints) VALUES ("11",75);
+INSERT INTO Performance (team,speakerPoints) VALUES ("12",76);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",77);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",78);
+INSERT INTO Performance (team,speakerPoints) VALUES ("15",79);
+INSERT INTO Performance (team,speakerPoints) VALUES ("16",80);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",1);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",2);
+INSERT INTO Performance (team,speakerPoints) VALUES ("9",3);
+INSERT INTO Performance (team,speakerPoints) VALUES ("13",4);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("10",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("14",8);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("1",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("5",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("2",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("6",8);
+
+
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",1);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",2);
+INSERT INTO Performance (team,speakerPoints) VALUES ("35",3);
+INSERT INTO Performance (team,speakerPoints) VALUES ("36",4);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("39",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("40",8);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",9);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",10);
+INSERT INTO Performance (team,speakerPoints) VALUES ("43",11);
+INSERT INTO Performance (team,speakerPoints) VALUES ("44",12);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",13);
+INSERT INTO Performance (team,speakerPoints) VALUES ("46",14);
+INSERT INTO Performance (team,speakerPoints) VALUES ("47",15);
+INSERT INTO Performance (team,speakerPoints) VALUES ("48",16);
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",17);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",18);
+INSERT INTO Performance (team,speakerPoints) VALUES ("35",19);
+INSERT INTO Performance (team,speakerPoints) VALUES ("36",20);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",21);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",22);
+INSERT INTO Performance (team,speakerPoints) VALUES ("39",23);
+INSERT INTO Performance (team,speakerPoints) VALUES ("40",24);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",25);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",26);
+INSERT INTO Performance (team,speakerPoints) VALUES ("43",27);
+INSERT INTO Performance (team,speakerPoints) VALUES ("44",28);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",29);
+INSERT INTO Performance (team,speakerPoints) VALUES ("46",30);
+INSERT INTO Performance (team,speakerPoints) VALUES ("47",31);
+INSERT INTO Performance (team,speakerPoints) VALUES ("48",32);
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",33);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",34);
+INSERT INTO Performance (team,speakerPoints) VALUES ("35",35);
+INSERT INTO Performance (team,speakerPoints) VALUES ("36",36);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",37);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",38);
+INSERT INTO Performance (team,speakerPoints) VALUES ("39",39);
+INSERT INTO Performance (team,speakerPoints) VALUES ("40",40);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",41);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",42);
+INSERT INTO Performance (team,speakerPoints) VALUES ("43",43);
+INSERT INTO Performance (team,speakerPoints) VALUES ("44",44);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",45);
+INSERT INTO Performance (team,speakerPoints) VALUES ("46",46);
+INSERT INTO Performance (team,speakerPoints) VALUES ("47",47);
+INSERT INTO Performance (team,speakerPoints) VALUES ("48",48);
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",49);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",50);
+INSERT INTO Performance (team,speakerPoints) VALUES ("35",51);
+INSERT INTO Performance (team,speakerPoints) VALUES ("36",52);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",53);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",54);
+INSERT INTO Performance (team,speakerPoints) VALUES ("39",55);
+INSERT INTO Performance (team,speakerPoints) VALUES ("40",56);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",57);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",58);
+INSERT INTO Performance (team,speakerPoints) VALUES ("43",59);
+INSERT INTO Performance (team,speakerPoints) VALUES ("44",60);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",61);
+INSERT INTO Performance (team,speakerPoints) VALUES ("46",62);
+INSERT INTO Performance (team,speakerPoints) VALUES ("47",63);
+INSERT INTO Performance (team,speakerPoints) VALUES ("48",64);
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",65);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",66);
+INSERT INTO Performance (team,speakerPoints) VALUES ("35",67);
+INSERT INTO Performance (team,speakerPoints) VALUES ("36",68);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",69);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",70);
+INSERT INTO Performance (team,speakerPoints) VALUES ("39",71);
+INSERT INTO Performance (team,speakerPoints) VALUES ("40",72);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",73);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",74);
+INSERT INTO Performance (team,speakerPoints) VALUES ("43",75);
+INSERT INTO Performance (team,speakerPoints) VALUES ("44",76);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",77);
+INSERT INTO Performance (team,speakerPoints) VALUES ("46",78);
+INSERT INTO Performance (team,speakerPoints) VALUES ("47",79);
+INSERT INTO Performance (team,speakerPoints) VALUES ("48",80);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",1);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",2);
+INSERT INTO Performance (team,speakerPoints) VALUES ("41",3);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",4);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("42",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("45",8);
+
+INSERT INTO Performance (team,speakerPoints) VALUES ("33",5);
+INSERT INTO Performance (team,speakerPoints) VALUES ("37",6);
+INSERT INTO Performance (team,speakerPoints) VALUES ("34",7);
+INSERT INTO Performance (team,speakerPoints) VALUES ("38",8);
