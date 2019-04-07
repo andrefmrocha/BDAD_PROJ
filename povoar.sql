@@ -15,7 +15,7 @@ Composição da Database:
  x	- 50 SpeakerPoints
  x 	- 400 Specification
  x	- 276 Performance (4 equipas * 69 debates de torneio)
-	- 48 TournamentTeam (3 torneios * 16 equipas cada torneio)
+ x	- 48 TournamentTeam (3 torneios * 16 equipas cada torneio)
 
 */
 
@@ -833,7 +833,6 @@ INSERT INTO WeeklyDebate (debate,motion,infoSlide,organizer) VALUES (4,"consecte
 -- Tournament
 INSERT INTO Tournament (name,official,society) VALUES ("Tornadu",1,5);
 INSERT INTO Tournament (name,official,society) VALUES ("Open Coimbra",0,6);
-INSERT INTO Tournament (name,official,society) VALUES ("Distrital do Porto",1,7);
 
 
 -- Round
@@ -1421,3 +1420,39 @@ INSERT INTO Performance (team,speakerPoints) VALUES ("33",5);
 INSERT INTO Performance (team,speakerPoints) VALUES ("37",6);
 INSERT INTO Performance (team,speakerPoints) VALUES ("34",7);
 INSERT INTO Performance (team,speakerPoints) VALUES ("38",8);
+
+
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",1);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",2);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",3);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",4);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",5);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",6);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",7);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",8);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",9);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",10);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",11);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",12);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",13);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",14);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",15);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("1",16);
+
+
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",33);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",34);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",35);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",36);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",37);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",38);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",39);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",40);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",41);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",42);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",43);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",44);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",45);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",46);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",47);
+INSERT INTO TournamentTeam (tournament,team) VALUES ("2",48);
