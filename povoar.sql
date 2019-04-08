@@ -825,10 +825,10 @@ INSERT INTO Adjudicator (person,debate) VALUES (69,"100");
 
 
 -- WeeklyDebate
-INSERT INTO WeeklyDebate (debate,motion,infoSlide,organizer) VALUES (1,"Pellentesque ut ipsum ac mi eleifend",null,1);
-INSERT INTO WeeklyDebate (debate,motion,infoSlide,organizer) VALUES (2,"turpis nec mauris blandit","metus vitae velit egestas",2);
-INSERT INTO WeeklyDebate (debate,motion,infoSlide,organizer) VALUES (3,"rhoncus id, mollis nec, cursus a, enim. Suspendisse","amet,",3);
-INSERT INTO WeeklyDebate (debate,motion,infoSlide,organizer) VALUES (4,"consectetuer ipsum nunc id enim. Curabitur","ullamcorper, velit in",4);
+INSERT INTO WeeklyDebate (id,motion,infoSlide,organizer) VALUES (1,"Pellentesque ut ipsum ac mi eleifend",null,1);
+INSERT INTO WeeklyDebate (id,motion,infoSlide,organizer) VALUES (2,"turpis nec mauris blandit","metus vitae velit egestas",2);
+INSERT INTO WeeklyDebate (id,motion,infoSlide,organizer) VALUES (3,"rhoncus id, mollis nec, cursus a, enim. Suspendisse","amet,",3);
+INSERT INTO WeeklyDebate (id,motion,infoSlide,organizer) VALUES (4,"consectetuer ipsum nunc id enim. Curabitur","ullamcorper, velit in",4);
 
 -- Tournament
 INSERT INTO Tournament (name,official,society) VALUES ("Tornadu",1,5);
