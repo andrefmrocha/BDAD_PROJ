@@ -852,6 +852,7 @@ insert into Round (motion, infoSlide, tournament, name) values ('This House In c
 insert into Round (motion, infoSlide, tournament, name) values ('This House Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', null, 2, 'SemiFinal');
 insert into Round (motion, infoSlide, tournament, name) values ('This House Integer ac leo. Pellentesque ultrices mattis odio.', null, 2, 'Final');
 
+/*
 -- SpeakerPoints
 INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (67,74);
 INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (87,80);
@@ -933,9 +934,11 @@ INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (84,82
 INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (76,84);
 INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (67,62);
 INSERT INTO SpeakerPoints (firstSpeakerPoints,secondSpeakerPoints) VALUES (84,79);
+*/
 
 -- TournamentDebate
 -- Tournament 1: R1 - R5
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (5,"1",50,1,2,3,4);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (6,"1",55,5,6,7,8);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (7,"1",90,9,10,11,12);
@@ -956,16 +959,45 @@ INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeak
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (22,"5",78,69,70,71,72);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (23,"5",90,73,74,75,76);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (24,"5",84,77,78,79,80);
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (5,1,73.875,90,51,81,68,89,59,84,69);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (6,1,65.25,56,80,68,52,71,54,65,76);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (7,1,64.375,51,60,56,59,89,57,68,75);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (8,1,62.125,52,58,73,60,61,62,57,74);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (9,2,73.5,80,85,61,86,61,56,92,67);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (10,2,68.75,60,61,80,76,55,75,51,92);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (11,2,76.375,66,82,72,80,82,88,81,60);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (12,2,67.5,81,79,81,78,50,54,61,56);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (13,3,72.875,61,89,62,71,71,75,93,61);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (14,3,74.625,85,55,51,79,82,90,63,92);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (15,3,71.75,74,60,86,66,92,71,54,71);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (16,3,71.875,85,66,71,55,82,81,53,82);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (17,4,70.5,89,53,76,63,59,86,75,63);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (18,4,72.375,79,92,53,82,58,51,89,75);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (19,4,65.5,90,59,52,84,58,66,63,52);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (20,4,72,76,71,69,92,55,54,68,91);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (21,5,65.375,58,73,57,73,87,63,58,54);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (22,5,65.375,55,51,63,78,81,62,53,80);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (23,5,67,53,51,86,56,87,73,77,53);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (24,5,64,54,85,58,54,57,68,66,70);
 
 -- Tournament 1: SemiFinals
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (25,"6",50,1,2,3,4);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (26,"6",88,5,6,7,8);
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (25,"6","70.625",77,73,77,61,77,75,63,62);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (26,"6","79.375",73,76,85,88,80,85,68,80);
 
 -- Tournament 1: Finals
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (27,"7",88,5,6,7,8);
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (27,"7","74.875",76,71,72,75,70,73,75,87);
 
 
 -- Tournament 2: R1 - R5
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (28,"8",51,1,2,3,4);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (29,"8",94,5,6,7,8);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (30,"8",54,9,10,11,12);
@@ -986,15 +1018,41 @@ INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeak
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (45,"12",55,69,70,71,72);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (46,"12",92,73,74,75,76);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (47,"12",54,77,78,79,80);
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (28,"8","69.875",61,59,69,79,74,55,80,82);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (29,"8","70.75",78,83,58,70,52,69,91,65);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (30,"8","73.125",83,70,70,79,62,93,51,77);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (31,"8","75.125",91,58,91,53,79,66,79,84);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (32,"9","70",60,70,75,66,66,65,75,83);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (33,"9","72.25",91,71,81,74,59,59,68,75);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (34,"9","67.375",75,79,65,53,54,60,67,86);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (35,"9","70.875",88,91,57,56,82,86,53,54);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (36,"10","76.375",81,52,60,72,92,78,83,93);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (37,"10","78",89,87,68,74,52,91,72,91);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (38,"10","71.125",54,53,73,71,89,81,71,77);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (39,"10","67.5",76,50,51,83,90,54,85,51);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (40,"11","73.375",55,58,87,59,78,90,69,91);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (41,"11","75.375",71,86,90,63,84,57,68,84);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (42,"11","75.25",93,89,72,67,89,58,61,73);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (43,"11","70",75,85,51,88,56,80,55,70);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (44,"12","71.375",62,85,56,70,65,93,74,66);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (45,"12","75.125",85,92,67,81,64,86,76,50);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (46,"12","68.875",89,66,56,71,60,65,82,62);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (47,"12","70.5",70,64,64,90,50,70,66,90);
 
 -- Tournament 2: SemiFinals
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (48,"13",60,1,2,3,4);
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (49,"13",60,5,6,7,8);
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (48,"13","77.375",75,68,65,81,71,81,93,85);
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (49,"13","72.125",75,62,81,81,80,70,61,67);
 
 -- Tournament 2: Finals
+/*
 INSERT INTO TournamentDebate (id,round,speakerPointsMean,OGSpeakerPoints,OOSpeakerPoints,CGSpeakerPoints,COSpeakerPoints) VALUES (50,"14",50,5,6,7,8);
-
-
+*/
+INSERT INTO TournamentDebate (id,round,speakerPointsMean,PMSpeakerPoints,DPMSpeakerPoints,LOSpeakerPoints,DLOSpeakerPoints,MGSpeakerPoints,GWSpeakerPoints,MOSpeakerPoints,OWSpeakerPoints) VALUES (50,"14","76.5",70,89,88,72,74,69,65,85);
 
 
 
@@ -1226,7 +1284,7 @@ INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,te
 
 
 
-
+/*
 INSERT INTO Performance (team,speakerPoints) VALUES ("1",1);
 INSERT INTO Performance (team,speakerPoints) VALUES ("2",2);
 INSERT INTO Performance (team,speakerPoints) VALUES ("3",3);
@@ -1420,7 +1478,7 @@ INSERT INTO Performance (team,speakerPoints) VALUES ("33",5);
 INSERT INTO Performance (team,speakerPoints) VALUES ("37",6);
 INSERT INTO Performance (team,speakerPoints) VALUES ("34",7);
 INSERT INTO Performance (team,speakerPoints) VALUES ("38",8);
-
+*/
 
 INSERT INTO TournamentTeam (tournament,team) VALUES ("1",1);
 INSERT INTO TournamentTeam (tournament,team) VALUES ("1",2);
