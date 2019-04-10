@@ -152,7 +152,8 @@
 						CHECK(name = 'R1' OR name = 'R2' OR name = 'R3' OR name = 'R4' OR name = 'R5' OR name = 'SemiFinal' OR name = 'Final'),
 		infoSlide	TEXT,
 		tournament	INTEGER NOT NULL
-							REFERENCES Tournament(id) ON DELETE CASCADE ON UPDATE CASCADE
+							REFERENCES Tournament(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE(tournament, name)
 	);
 
 
