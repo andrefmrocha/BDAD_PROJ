@@ -1,4 +1,3 @@
-	-- Fazer assertion temporais, numero de equipas do torneio => numero de debate, constituicao das equipas
 	PRAGMA foreign_keys = ON;
 	-- Person table
 	DROP TABLE IF EXISTS Person;
@@ -81,7 +80,6 @@
 
 
 	-- -- Member table
-	-- TODO: ver esta tentativa de unir associate e member
 	DROP TABLE IF EXISTS Member;
 
 	CREATE TABLE Member(
@@ -253,34 +251,6 @@
 		UNIQUE(secondSpeaker, debate),
 		CHECK(firstSpeaker <> secondSpeaker)
 	);
-
-/*
-	-- SpeakerPoints table
-	DROP TABLE IF EXISTS SpeakerPoints;
-
-	CREATE TABLE SpeakerPoints(
-		id					INTEGER  PRIMARY KEY,
-		firstSpeakerPoints	INTEGER  NOT NULL
-									DEFAULT(50)
-									CHECK (firstSpeakerPoints <= 100 AND firstSpeakerPoints >= 50),
-		secondSpeakerPoints	INTEGER  NOT NULL
-									DEFAULT(50)
-									CHECK (secondSpeakerPoints <= 100 AND secondSpeakerPoints >= 50),
-		UNIQUE(firstSpeakerPoints, secondSpeakerPoints)
-	);
-
-
-	-- Performance table
-	DROP TABLE IF EXISTS Performance;
-
-	CREATE TABLE Performance(
-		id				INTEGER  PRIMARY KEY,
-		team			INTEGER NOT NULL
-								REFERENCES Team(id) ON DELETE SET NULL ON UPDATE CASCADE,
-		speakerpoints	INTEGER	NOT NULL
-								REFERENCES SpeakerPoints(id) ON DELETE SET NULL ON UPDATE CASCADE
-	);
-*/
 
 	-- TournamentTeam table
 	DROP TABLE IF EXISTS TournamentTeam;
