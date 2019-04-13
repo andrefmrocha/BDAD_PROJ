@@ -295,5 +295,3 @@
 		)
 		
 	) WITHOUT ROWID;
-
-	-- PRAGMA foreign_keys = OFF;
