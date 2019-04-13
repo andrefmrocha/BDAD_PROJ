@@ -3,18 +3,16 @@ Composição da Database:
  x	- 10 Universidades
  x	- 8 Sociedades - uni 3 e 9 não têm sociedade
  x	- 3 Torneios - 2 oficiais (Distrital e Tornadu) e 1 open todos de 16 equipas
- x	- 21 Rondas - 7 * 3
- x	- 69 DebatesTorneio - (4 (16 equipas) * 5 (rondas iniciais) + 2 * 1 (Semifinais) + 1 (final) ) * 3 (torneios)
- x	- 31 DebatesRegulares
+ x	- 14 Rondas - 7 * 3
+ x	- 46 DebatesTorneio - (4 (16 equipas) * 5 (rondas iniciais) + 2 * 1 (Semifinais) + 1 (final) ) * 3 (torneios)
+ x	- 3 DebatesRegulares
  x	- 100 Debates
- x	- 70 Teams - 33 "oficiais" (20 + 13) + 37 mix
+ x	- 46 Teams
  x	- 70 Pessoas - 40 estudantes +  15 alumni + 15 nonstudent
  x	- 63 Frequent - 55 normais e 1, 8, ... (7 em 7 < 55 ) duas unis 
  x	- 40 Member
  x	- 350 Adjudicatos - 25 debates de 2, 25 de 3, 25 de 4 e 25 de 5
- x	- 50 SpeakerPoints
  x 	- 400 Specification
- x	- 276 Performance (4 equipas * 69 debates de torneio)
  x	- 48 TournamentTeam (3 torneios * 16 equipas cada torneio)
 
 */
@@ -262,7 +260,6 @@ INSERT INTO Society (name,university) VALUES ("SDISM",10);
 
 
 -- Team
--- 20 + 12 StudentOnly-Teams
 INSERT INTO Team (name,person1,person2,points) VALUES ("accumsan neque et nunc.",1,2,13);
 INSERT INTO Team (name,person1,person2,points) VALUES ("id risus quis",3,4,2);
 INSERT INTO Team (name,person1,person2,points) VALUES ("nunc sit",5,6,6);
@@ -297,7 +294,6 @@ INSERT INTO Team (name,person1,person2,points) VALUES ("Suspendisse aliquet, sem
 INSERT INTO Team (name,person1,person2,points) VALUES ("elit, dictum",21,32,0);
 INSERT INTO Team (name,person1,person2,points) VALUES ("tristique pellentesque, tellus sem",23,35,3);
 
--- 16 Mixed Teams
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("enim. Nunc",38,39,5);
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("gravida. Aliquam tincidunt,",40,41,7);
 INSERT INTO `Team` (`name`,`person1`,`person2`,`points`) VALUES ("orci",42,43,15);
