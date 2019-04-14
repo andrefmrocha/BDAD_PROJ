@@ -31,7 +31,7 @@
 	CREATE TABLE NonStudent(
 		id			INTEGER	 REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
 							 NOT NULL,
-		occupation	TEXT NOT NULL,
+		occupation	TEXT,
 		
 		PRIMARY KEY(id)
 	);
