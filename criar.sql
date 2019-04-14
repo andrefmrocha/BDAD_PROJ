@@ -17,10 +17,8 @@
 	DROP TABLE IF EXISTS Student;
 
 	CREATE TABLE Student(
-		id				INTEGER  REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
+		id				INTEGER REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
 						NOT NULL,
-		studentCycle	TEXT NOT NULL,
-		studentNumber	TEXT NOT NULL UNIQUE,
 		alumni          BOOLEAN NOT NULL, -- TODO ver isto
 
 		PRIMARY KEY(id)
@@ -54,12 +52,14 @@
 	DROP TABLE IF EXISTS Frequent;
 
 	CREATE TABLE Frequent(
-		person		INTEGER	REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
-					NOT NULL,
-		university	INTEGER	REFERENCES University(id) ON DELETE CASCADE ON UPDATE CASCADE
-					NOT NULL,
+		person			INTEGER	REFERENCES Student(id) ON DELETE CASCADE ON UPDATE CASCADE
+						NOT NULL,
+		university		INTEGER	REFERENCES University(id) ON DELETE CASCADE ON UPDATE CASCADE
+						NOT NULL,
+		studentNumber	INTEGER NOT NULL,
 		-- TODO: VER ISTO
 		-- CHECK(person.alumni = true),
+		UNIQUE (university, studentNumber),
 
 		PRIMARY KEY(
 			person,
@@ -92,7 +92,6 @@
 								stature = 'Treasure' OR stature = 'BoardMember' OR stature = 'Director' OR stature = 'CenterDirector'),
 		associateNumber	INTEGER NOT NULL,
 
-		-- CHECK((member = Alumni(id) AND stature = 'Associate') OR member = Student(id)),
 		-- Check with triggers if person belongs to uni of the society
 		PRIMARY KEY(
 			associateNumber,
@@ -219,7 +218,6 @@
 					NOT NULL,
 		motion		TEXT NOT NULL,
 		infoSlide	TEXT,	
-		-- Ver como por não nulo
 		organizer	INTEGER NOT NULL
 							REFERENCES Society(id) ON DELETE CASCADE ON UPDATE CASCADE,
 
