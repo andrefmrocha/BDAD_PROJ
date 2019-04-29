@@ -17,8 +17,7 @@
 	DROP TABLE IF EXISTS Student;
 
 	CREATE TABLE Student(
-		id				INTEGER REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
-						NOT NULL,
+		id				INTEGER REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		alumni          BOOLEAN NOT NULL, -- TODO ver isto
 
 		PRIMARY KEY(id)
@@ -29,8 +28,7 @@
 	DROP TABLE IF EXISTS NonStudent;
 
 	CREATE TABLE NonStudent(
-		id			INTEGER	 REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
-							 NOT NULL,
+		id			INTEGER	 REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		occupation	TEXT,
 		
 		PRIMARY KEY(id)
@@ -52,10 +50,8 @@
 	DROP TABLE IF EXISTS Frequent;
 
 	CREATE TABLE Frequent(
-		person			INTEGER	REFERENCES Student(id) ON DELETE CASCADE ON UPDATE CASCADE
-						NOT NULL,
-		university		INTEGER	REFERENCES University(id) ON DELETE CASCADE ON UPDATE CASCADE
-						NOT NULL,
+		person			INTEGER	REFERENCES Student(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		university		INTEGER	REFERENCES University(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		studentNumber	INTEGER NOT NULL,
 		-- TODO: VER ISTO
 		-- CHECK(person.alumni = true),
@@ -85,8 +81,7 @@
 	CREATE TABLE Member(
 		person			INTEGER NOT NULL 
 								REFERENCES Student(id) ON DELETE CASCADE ON UPDATE CASCADE,
-		society			INTEGER REFERENCES Society(id) ON DELETE CASCADE ON UPDATE CASCADE
-						NOT NULL,
+		society			INTEGER REFERENCES Society(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		stature			TEXT NOT NULL
 							CHECK(stature = 'Associate' OR stature = 'Director' OR stature = 'SubDirector' OR 
 								stature = 'Treasure' OR stature = 'BoardMember' OR stature = 'Director' OR stature = 'CenterDirector'),
@@ -158,51 +153,48 @@
 	DROP TABLE IF EXISTS Adjudicator;
 
 	CREATE TABLE Adjudicator(
-		debate	INTEGER REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE
-				NOT NULL,
-		person	INTEGER REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE
-				NOT NULL,
+		debate	INTEGER REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		person	INTEGER REFERENCES Person(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		PRIMARY KEY(
 			debate,
 			person
 		)
-	);
+	) WITHOUT ROWID;
 
 
 	-- TournamentDebate table
 	DROP TABLE IF EXISTS TournamentDebate;
 
 	CREATE TABLE TournamentDebate(
-		id 					INTEGER	REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE
-							NOT NULL,
+		id 					INTEGER	REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		round 				INTEGER	NOT NULL
 									REFERENCES Round(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		speakerPointsMean	REAL	DEFAULT(50)
 									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
 									NOT NULL,
 		PMSpeakerPoints		INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (PMSpeakerPoints <= 100 AND PMSpeakerPoints >= 50)
 									NOT NULL,
 		DPMSpeakerPoints	INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (DPMSpeakerPoints <= 100 AND DPMSpeakerPoints >= 50)
 									NOT NULL,
 		LOSpeakerPoints		INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (LOSpeakerPoints <= 100 AND LOSpeakerPoints >= 50)
 									NOT NULL,
 		DLOSpeakerPoints	INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (DLOSpeakerPoints <= 100 AND DLOSpeakerPoints >= 50)
 									NOT NULL,
 		MGSpeakerPoints		INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (MGSpeakerPoints <= 100 AND MGSpeakerPoints >= 50)
 									NOT NULL,
 		GWSpeakerPoints		INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (GWSpeakerPoints <= 100 AND GWSpeakerPoints >= 50)
 									NOT NULL,
 		MOSpeakerPoints		INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (MOSpeakerPoints <= 100 AND MOSpeakerPoints >= 50)
 									NOT NULL,
 		OWSpeakerPoints 	INTEGER	DEFAULT(50) 
-									CHECK (speakerPointsMean <= 100 AND speakerPointsMean >= 50)
+									CHECK (OWSpeakerPoints <= 100 AND OWSpeakerPoints >= 50)
 									NOT NULL,
 		CHECK(speakerPointsMean = (PMSpeakerPoints + DPMSpeakerPoints + LOSpeakerPoints + DLOSpeakerPoints + 
 									MGSpeakerPoints + GWSpeakerPoints + MOSpeakerPoints + OWSpeakerPoints) / 8.0),
@@ -214,8 +206,7 @@
 	DROP TABLE IF EXISTS WeeklyDebate;
 
 	CREATE TABLE WeeklyDebate(
-		id			INTEGER REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE
-					NOT NULL,
+		id			INTEGER REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		motion		TEXT NOT NULL,
 		infoSlide	TEXT,	
 		organizer	INTEGER NOT NULL
@@ -229,7 +220,6 @@
 	DROP TABLE IF EXISTS Specification;
 
 	CREATE TABLE Specification(
-		id				INTEGER  PRIMARY KEY,
 		classification	INTEGER	 NOT NULL
 							CHECK(classification <= 4 AND classification >= 1),
 		position		TEXT NOT NULL
@@ -244,7 +234,7 @@
 								REFERENCES Debate(id) ON DELETE CASCADE ON UPDATE CASCADE,
 		UNIQUE(position, debate),
 		UNIQUE(classification, debate),
-		UNIQUE(team, debate),
+		PRIMARY KEY(team, debate),
 		UNIQUE(firstSpeaker, debate),
 		UNIQUE(secondSpeaker, debate),
 		CHECK(firstSpeaker <> secondSpeaker)
@@ -254,10 +244,8 @@
 	DROP TABLE IF EXISTS TournamentTeam;
 
 	CREATE TABLE TournamentTeam(
-		tournament	INTEGER NOT NULL
-							REFERENCES Tournament(id) ON DELETE CASCADE ON UPDATE CASCADE,
-		team		INTEGER NOT NULL
-							REFERENCES Team(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		tournament	INTEGER REFERENCES Tournament(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		team		INTEGER REFERENCES Team(id) ON DELETE CASCADE ON UPDATE CASCADE,
 
 		PRIMARY KEY (
 			tournament,
