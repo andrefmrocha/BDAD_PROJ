@@ -133,6 +133,9 @@ INSERT INTO Student (id,alumni) VALUES (37,"0");
 INSERT INTO Student (id,alumni) VALUES (38,"0");
 INSERT INTO Student (id,alumni) VALUES (39,"0");
 INSERT INTO Student (id,alumni) VALUES (40,"0");
+
+INSERT INTO Student (id,alumni) VALUES (65,"0");
+
 -- Alumni : 15
 INSERT INTO Student (id,alumni) VALUES (41,"1");
 INSERT INTO Student (id,alumni) VALUES (42,"1");
@@ -150,6 +153,8 @@ INSERT INTO Student (id,alumni) VALUES (53,"1");
 INSERT INTO Student (id,alumni) VALUES (54,"1");
 INSERT INTO Student (id,alumni) VALUES (55,"1");
 
+
+
 -- NonStudent
 INSERT INTO NonStudent (id,occupation) VALUES (56,"Advertising");
 INSERT INTO NonStudent (id,occupation) VALUES (57,"Customer Relations");
@@ -160,7 +165,7 @@ INSERT INTO NonStudent (id,occupation) VALUES (61,"Human Resources");
 INSERT INTO NonStudent (id,occupation) VALUES (62,"Tech Support");
 INSERT INTO NonStudent (id,occupation) VALUES (63,"Research and Development");
 INSERT INTO NonStudent (id,occupation) VALUES (64,"Asset Management");
-INSERT INTO NonStudent (id,occupation) VALUES (65,"Media Relations");
+-- INSERT INTO NonStudent (id,occupation) VALUES (65,"Media Relations");
 INSERT INTO NonStudent (id,occupation) VALUES (66,"Human Resources");
 INSERT INTO NonStudent (id,occupation) VALUES (67,"Accounting");
 INSERT INTO NonStudent (id,occupation) VALUES (68,"Public Relations");

@@ -1,0 +1,9 @@
+drop view OpenTPMPoints;
+drop view OpenTDPMPoints;
+drop view OpenTLOPoints;
+drop view OpenTDLOPoints;
+drop view OpenTMGPoints;
+drop view OpenTGWPoints;
+drop view OpenTMOPoints;
+drop view OpenTOWPoints;
+drop view OpenTPeoplePoints;
