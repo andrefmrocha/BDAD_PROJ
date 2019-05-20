@@ -1,4 +1,4 @@
 select *
 from PeoplePoints
 where id = 47
-order by date
+order by date   
