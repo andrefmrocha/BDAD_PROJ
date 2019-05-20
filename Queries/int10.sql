@@ -1,3 +1,4 @@
-select organizer, count(*)
-from WeeklyDebate
-group by organizer
+select *
+from PeoplePoints
+where id = 47
+order by date

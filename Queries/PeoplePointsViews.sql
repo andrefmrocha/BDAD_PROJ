@@ -1,46 +1,46 @@
 create view PMPoints as
-select Person.id, PMSpeakerPoints as Points
+select Person.id, date, PMSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.firstSpeaker and Specification.position = 'OG' and Debate.id = Specification.debate;
 
 create view DPMPoints as
-select Person.id, DPMSpeakerPoints as Points
+select Person.id, date, DPMSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.secondSpeaker and Specification.position = 'OG' and Debate.id = Specification.debate;
 
 
 create view LOPoints as
-select Person.id, LOSpeakerPoints as Points
+select Person.id, date, LOSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.firstSpeaker and Specification.position = 'OO' and Debate.id = Specification.debate;
 
 
 create view DLOPoints as
-select Person.id, DLOSpeakerPoints as Points
+select Person.id, date, DLOSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.secondSpeaker and Specification.position = 'OO' and Debate.id = Specification.debate;
 
 
 create view MGPoints as
-select Person.id, MGSpeakerPoints as Points
+select Person.id, date, MGSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.firstSpeaker and Specification.position = 'CG' and Debate.id = Specification.debate;
 
 
 create view GWPoints as
-select Person.id, GWSpeakerPoints as Points
+select Person.id, date, GWSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.secondSpeaker and Specification.position = 'CG' and Debate.id = Specification.debate;
 
 
 create view MOPoints as
-select Person.id, MOSpeakerPoints as Points
+select Person.id, date, MOSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.firstSpeaker and Specification.position = 'CO' and Debate.id = Specification.debate;
 
 
 create view OWPoints as
-select Person.id, OWSpeakerPoints as Points
+select Person.id, date, OWSpeakerPoints as Points
 from Person Join Specification Join (Debate Natural Join TournamentDebate)
 where Person.id = Specification.secondSpeaker and Specification.position = 'CO' and Debate.id = Specification.debate;
 
