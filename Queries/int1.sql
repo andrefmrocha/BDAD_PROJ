@@ -1,3 +1,7 @@
+.mode		columns
+.headers	on
+.nullvalue	NULL
+
 select motion, sum(speakerPointsMean) as speakerPointsSum
 from Round JOIN TournamentDebate
 where Round.id = TournamentDebate.round and Round.name like 'R%'

@@ -1,3 +1,7 @@
+.mode		columns
+.headers	on
+.nullvalue	NULL
+
 select
   Person.id,
   Adjudicator.debate,

@@ -1,3 +1,7 @@
+.mode		columns
+.headers	on
+.nullvalue	NULL
+
 .read PeoplePointsViews.sql
 select Frequent.university,  avg(Points)
 from PeoplePoints, Frequent

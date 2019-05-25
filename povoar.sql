@@ -287,10 +287,10 @@ INSERT INTO Team (name,person1,person2,points) VALUES ("Suspendisse",35,36,2);
 INSERT INTO Team (name,person1,person2,points) VALUES ("Suspendisse sagittis. Nullam vitae",37,38,15);
 INSERT INTO Team (name,person1,person2,points) VALUES ("inceptos hymenaeos. Mauris ut",39,40,3);
 
-INSERT INTO Team (name,person1,person2,points) VALUES ("Cras interdum. Nunc",1,2,9);
-INSERT INTO Team (name,person1,person2,points) VALUES ("morbi tristique senectus",3,5,11);
-INSERT INTO Team (name,person1,person2,points) VALUES ("est",5,8,14);
-INSERT INTO Team (name,person1,person2,points) VALUES ("odio.",7,11,14);
+INSERT INTO Team (name,person1,person2,points) VALUES ("Cras interdum. Nunc",1,2,0);
+INSERT INTO Team (name,person1,person2,points) VALUES ("morbi tristique senectus",3,5,0);
+INSERT INTO Team (name,person1,person2,points) VALUES ("est",5,8,0);
+INSERT INTO Team (name,person1,person2,points) VALUES ("odio.",7,11,0);
 INSERT INTO Team (name,person1,person2,points) VALUES ("placerat velit.",9,14,7);
 INSERT INTO Team (name,person1,person2,points) VALUES ("blandit. Nam nulla magna,",11,17,4);
 INSERT INTO Team (name,person1,person2,points) VALUES ("lacus.",13,20,6);
@@ -1128,10 +1128,12 @@ INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,te
 
 
 
-INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,21,"1");
-INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,5,22,"1");
-INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,8,23,"1");
-INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,11,24,"1");
+-- INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",1,2,21,"1");
+-- INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",3,5,22,"1");
+-- INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",5,8,23,"1");
+-- INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",7,11,24,"1");
+
+
 INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",9,14,25,"2");
 INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OO","2",11,17,26,"2");
 INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CG","3",13,20,27,"2");

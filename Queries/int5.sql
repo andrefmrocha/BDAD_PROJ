@@ -1,3 +1,7 @@
+.mode		columns
+.headers	on
+.nullvalue	NULL
+
 SELECT
     CASE
       when Specification.position LIKE '%G'
