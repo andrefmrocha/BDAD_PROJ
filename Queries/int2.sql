@@ -1,7 +1,10 @@
-.read PeoplePointsViews
-select *, sum(Points)
-from PeoplePoints
-group by id
-order by sum(Points) desc
-limit 1;
-.read DropPeopleViews
+.read PeoplePointsViews.sql
+select distinct id, MaxPoints as BestPoints
+from MaxPeoplePoints
+where not exists 
+(
+select *
+from MaxPeoplePoints
+where MaxPoints > BestPoints
+);
+.read DropPeopleViews.sql

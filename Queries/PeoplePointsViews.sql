@@ -68,3 +68,8 @@ from OWPoints
 UNION ALL
 select *
 from PMPoints;
+
+create view MaxPeoplePoints as
+select id, sum(Points) as MaxPoints
+from PeoplePoints 
+group by PeoplePoints.id;

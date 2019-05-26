@@ -7,3 +7,4 @@ drop view GWPoints;
 drop view MOPoints;
 drop view OWPoints;
 drop view PeoplePoints;
+drop view MaxPeoplePoints;

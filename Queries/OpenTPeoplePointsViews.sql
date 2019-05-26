@@ -68,3 +68,4 @@ from OpenTOWPoints
 UNION ALL
 select *
 from OpenTPMPoints;
+
