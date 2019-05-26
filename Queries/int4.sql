@@ -2,9 +2,9 @@
 .headers	on
 .nullvalue	NULL
 
-.read PeoplePointsViews.sql
+.read Queries/PeoplePointsViews.sql
 select Frequent.university,  avg(Points)
 from PeoplePoints, Frequent
 where PeoplePoints.id = Frequent.person
 group by Frequent.university;
-.read DropPeopleViews.sql
+.read Queries/DropPeopleViews.sql

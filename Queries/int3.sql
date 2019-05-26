@@ -2,8 +2,8 @@
 .headers	on
 .nullvalue	NULL
 
-.read OpenTPeoplePointsViews.sql
+.read Queries/OpenTPeoplePointsViews.sql
 select alumni, avg(Points)
 from OpenTPeoplePoints Natural Join Student
 group by alumni;
-.read DropOpenTPeopleViews.sql
+.read Queries/DropOpenTPeopleViews.sql
