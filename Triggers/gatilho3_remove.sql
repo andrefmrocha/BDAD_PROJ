@@ -1,1 +1,1 @@
-DROP TRIGGER T3;
+drop trigger FinalPoints;

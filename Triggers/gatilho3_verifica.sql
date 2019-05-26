@@ -1,12 +1,7 @@
-.mode		columns
-.headers	on
-.nullvalue	NULL
-
-
 select *
 from Specification, TournamentDebate
-where Specification.debate = 49 and Specification.debate = TournamentDebate.id;
-INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("CO","4",64,65,47,"49");
+where Specification.debate = 34 and Specification.debate = TournamentDebate.id;
+INSERT INTO Specification (position,classification,firstSpeaker,secondSpeaker,team,debate) VALUES ("OG","1",54,54,42,"34");
 select *
 from Specification, TournamentDebate
-where Specification.debate = 49 and Specification.debate = TournamentDebate.id;
+where Specification.debate = 34 and Specification.debate = TournamentDebate.id;

@@ -1,1 +1,1 @@
-drop trigger T2;
+DROP TRIGGER SemiFinalPoints;
