@@ -1,3 +1,6 @@
+PRAGMA foreign_keys = ON;
+
+
 CREATE TRIGGER DerivedTeamPoints
 AFTER INSERT ON Specification
 FOR EACH ROW

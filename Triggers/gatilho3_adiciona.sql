@@ -1,4 +1,6 @@
-create Trigger T3
+PRAGMA foreign_keys = ON;
+
+create Trigger SemiFinal
 Before Insert on Specification
 For Each Row
 When not exists(

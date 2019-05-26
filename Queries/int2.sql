@@ -2,7 +2,6 @@
 .headers	on
 .nullvalue	NULL
 
-
 .read Queries/PeoplePointsViews.sql
 select distinct id, MaxPoints as BestPoints
 from MaxPeoplePoints

@@ -1,3 +1,8 @@
+.mode		columns
+.headers	on
+.nullvalue	NULL
+
+
 select *
 from Specification, TournamentDebate
 where Specification.debate = 49 and Specification.debate = TournamentDebate.id;
